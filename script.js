@@ -17,6 +17,7 @@ function renderEmails(emails){
     //Scorro tutte le email presenti nell’array
     emails.forEach((email) => {
         const li = document.createElement("li");  //Creo un nuovo elemento <li>
+        
         li.classList.add("list-group-item");  //Aggiungo la classe per lo stile della lista
         li.textContent = email;  //Inserisco l’indirizzo email come testo della lista
         emailList.appendChild(li);  //Aggiungo la li dentro la ul
