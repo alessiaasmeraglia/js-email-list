@@ -20,3 +20,25 @@ function renderEmails(emails){
         emailList.appendChild(li);  //Aggiungo la li dentro la ul
     });
 }
+
+//Creo la funzione per le email
+function getEmails() {
+    emailList.innerHTML = '';
+    const emails = [];
+
+    for (let i = 0; i < 10; i++) {
+        fetch(apiUrl)
+        .then(risposta => risposta.json())
+        .then(dati => {
+            //console.log(dati);
+            emails.push(dati.response);
+
+            if(emails.length === 10) {
+                renderEmails(emails);
+            }
+        })
+    }
+}
+
+getEmails();
+generateBtn.addEventListener("click", getEmails);
