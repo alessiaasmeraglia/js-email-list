@@ -30,7 +30,6 @@ function getEmails() {
         fetch(apiUrl)
         .then(risposta => risposta.json())
         .then(dati => {
-            //console.log(dati);
             emails.push(dati.response);
 
             if(emails.length === 10) {
