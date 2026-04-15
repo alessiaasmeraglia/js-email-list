@@ -11,7 +11,7 @@ const generateBtn = document.getElementById("generateBtn");
 const apiUrl = "https://flynn.boolean.careers/exercises/api/random/mail";
 
 // Funzione che stampa le email
-function renderEmails(emails){
+/* function renderEmails(emails){
     emailList.innerHTML = ''; //Svuoto la lista prima di inserire i nuovi elementi
 
     //Scorro tutte le email presenti nell’array
@@ -21,6 +21,17 @@ function renderEmails(emails){
         li.classList.add("list-group-item");  //Aggiungo la classe per lo stile della lista
         li.textContent = email;  //Inserisco l’indirizzo email come testo della lista
         emailList.appendChild(li);  //Aggiungo la li dentro la ul
+    });
+} */
+function renderEmails(emails) {
+    emailList.innerHTML = '';
+
+    emails.forEach((email) => {
+        const li = document.createElement("li");
+        
+        li.className = "list-group-item d-flex justify-content-between align-items-center";
+        li.innerHTML = `<span>${email}</span>`;
+        emailList.appendChild(li);
     });
 }
 
